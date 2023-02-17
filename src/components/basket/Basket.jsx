@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {
   deleteBasketItem,
   updatedBasketItem,
-} from "../../store/basket/basketReducer";
+} from "../../store/basket/basketSlice";
 import { Modal } from "../UI/Modal";
 import { BasketItem } from "./BasketItem";
 import { TotalAmount } from "./TotalAmount";
@@ -12,7 +12,6 @@ import { TotalAmount } from "./TotalAmount";
 export const Basket = ({ onClose }) => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.basket.items);
-
   const decrementAmount = (id, amount) => {
     if (amount > 1) {
       dispatch(updatedBasketItem({ amount: amount - 1, id }));

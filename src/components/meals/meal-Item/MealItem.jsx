@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import styled from "styled-components";
 import { Button } from "../../UI/Button";
 import { ReactComponent as PlusIcon } from "../../../assets/icons/Vector3.svg";
 import { useDispatch } from "react-redux";
-import { addToBasket } from "../../../store/basket/basketReducer";
+import { addToBasket } from "../../../store/basket/basketSlice";
 
 export const MealItem = ({ meal }) => {
   const dispatch = useDispatch();

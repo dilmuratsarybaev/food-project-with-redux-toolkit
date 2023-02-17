@@ -1,36 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { fetchApi } from "../../lib/fatchApi";
-import { getMeals, mealsActionTypes } from "../../store/meals/mealsReducer";
+import { getMeals } from "../../store/meals/mealsSlice";
 import { MealItem } from "./meal-Item/MealItem";
 
-// const DUMMY_MEALS = [
-//   {
-//     id: Date.now().toString(),
-//     title: "Sushi",
-//     description: "Finest fish and veggies",
-//     price: 22.99,
-//   },
-//   {
-//     id: Math.random().toString(),
-//     title: "Schnitzel",
-//     description: "A german specialty!",
-//     price: 16.99,
-//   },
-//   {
-//     id: Math.random().toString(),
-//     title: "Barbecue Burger",
-//     description: "American, raw, meaty",
-//     price: 12.99,
-//   },
-//   {
-//     id: Math.random().toString(),
-//     title: "Green Bowl",
-//     description: "Healthy...and green...",
-//     price: 19.99,
-//   },
-// ];
 export const Meals = () => {
   const dispatch = useDispatch();
   const { meals, isLoading, error } = useSelector((state) => state.meals);
